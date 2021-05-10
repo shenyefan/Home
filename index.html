@@ -1,0 +1,60 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta http-equiv="pragma" content="no-cache">
+    <meta http-equiv="cache-control" content="no-cache">
+    <meta http-equiv="expires" content="0">
+    <title>申业凡</title>
+    <link rel="shortcut icon" href="logo.png">
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
+    <meta name="keywords" content="申业凡">
+    <meta name="description" content="Be brave no matter what your life is like to you. ">
+    <link rel="stylesheet" href="https://cdn.bootcss.com/font-awesome/5.11.2/css/all.min.css">
+    <link rel="stylesheet" href="assets/main.css">
+    <script src="https://cdn.jsdelivr.net/gh/stevenjoezhang/live2d-widget@latest/autoload.js"></script>
+    <script src="https://v1.hitokoto.cn/?encode=js&select=%23hitokoto" defer></script>
+    <script src="assets/typed.min.js">
+    </script>
+</head>
+
+<body>
+    <div class="wrapper">
+        <img class="avater" alt="申业凡" src="tx.jpg">
+        <div style="text-align:center;padding:10px">
+            <p id="hitokoto" style="font: size 15px">
+                <a href="#" style="font: size 15px" id="hitokoto_text"></a>
+            </p>
+            <div class="author" id="hitokoto_author"></div>
+            <nav>
+                <ul>
+                    <li><a class="Tip" href="https://so.fan793.cn" target="_blank"><i class="fa fa-search"></i>Search</a></li>
+                    <li><a class="Tip" href="https://blog.fan793.cn" target="_blank"><i class="fa fa-rss-square"></i>Blog</a></li>
+                    <li><a class="Tip" href="uªŒè¯/index.html" target="_blank"><i class="fa fa-heart"></i>uªŒè¯</a></li>
+                    <li><a class="Tip" id="Email" href="" target="_blank"><i class="fa fa-envelope"></i>Email</a></li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+    <p class="copyright">© 2019 - <span id="my-date">
+        <script>
+            var date = new Date;
+        nowYear = date.getFullYear().toString(), document.write(nowYear);
+        </script>
+        </span> &nbsp;shenyefan.cn
+    </p>
+</body>
+
+</html>
+<script type="text/javascript" src="assets/ThreeWebGL.js"></script>
+<script type="text/javascript" src="assets/ThreeExtras.js"></script>
+<script type="text/javascript" src="assets/Detector.js"></script>
+<script type="text/javascript" src="assets/RequestAnimationFrame.js"></script>
+<script src="assets/love.js"></script>
+<script id="vs" type="x-shader/x-vertex">varying vec2 vUv; void main() { vUv = uv; gl_Position = projectionMatrix * modelViewMatrix * vec4(position, 1.0); }</script>
+<script id="fs" type="x-shader/x-fragment">uniform sampler2D map; uniform vec3 fogColor; uniform float fogNear; uniform float fogFar; varying vec2 vUv; void main() { float depth = gl_FragCoord.z / gl_FragCoord.w; float fogFactor = smoothstep(fogNear, fogFar, depth); gl_FragColor = texture2D(map,vUv);
+    gl_FragColor.w *= pow(gl_FragCoord.z, 20.0); gl_FragColor = mix(gl_FragColor, vec4(fogColor, gl_FragColor.w), fogFactor); }</script>
+<script src="assets/main.js"></script>
